@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "devDependencies": {
+    "@astrojs/image": "^0.3.4",
     "@typescript-eslint/parser": "^5.33.1",
     "astro": "^1.0.6",
+    "astro-icon": "^0.7.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.0",
     "sass": "^1.54.4",

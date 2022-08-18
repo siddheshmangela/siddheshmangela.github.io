@@ -1,0 +1,34 @@
+---
+import { Sprite } from 'astro-icon';
+
+export interface Props {
+  name: string;
+  href: string;
+  title: string;
+  showTitle: boolean;
+}
+
+const { name = '', href = '', title = '', showTitle = false } = Astro.props as Props;
+---
+
+<a href={href} title={name} target="_blank" rel="noopener">
+  <Sprite name={name} />
+  {showTitle && <span>{title}</span>}
+</a>
+
+<style lang="scss">
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    :global(svg) {
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+</style>

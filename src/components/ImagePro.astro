@@ -1,0 +1,31 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+export interface Props {
+  src: any;
+}
+
+const { src = '' } = Astro.props as Props;
+---
+
+<div class="ImagePro">
+  <Picture
+    src={src}
+    widths={[200, 400, 800, 1050]}
+    sizes="(max-width: 800px) 100vw, 1050px"
+    alt="image"
+  />
+</div>
+
+<style lang="scss">
+  .ImagePro {
+    display: block;
+
+    :global(img) {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  }
+</style>
