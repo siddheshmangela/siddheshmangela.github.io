@@ -1,0 +1,24 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.33.1",
+    "astro": "^1.0.6",
+    "eslint": "^8.22.0",
+    "eslint-plugin-astro": "^0.17.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.0",
+    "sass": "^1.54.4",
+    "typescript": "^4.7.4",
+    "vite-tsconfig-paths": "^3.5.0"
+  }
+}
