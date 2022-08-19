@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node post-build.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "publish": "./deploy.sh"
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.4",
-    "@typescript-eslint/parser": "^5.33.1",
+    "@types/node": "^18.7.6",
     "astro": "^1.0.6",
     "astro-icon": "^0.7.3",
     "prettier": "^2.7.1",
