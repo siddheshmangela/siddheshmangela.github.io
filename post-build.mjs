@@ -16,8 +16,6 @@ const imagesLinkFix = async () => {
 
 const copyOgImage = async () => {
   try {
-    // const fileDest = './dist/og.jpg';
-
     const allFiles = await fs.readdir('./dist/_image/images');
     const filesFiltered = allFiles.filter((a) => a.includes('0_') && a.includes('.jpg'));
     const selectedFile = filesFiltered.find((a) => a.includes('0_1050'))
@@ -31,10 +29,20 @@ const copyOgImage = async () => {
   }
 };
 
+const deleteImageFolder = async () => {
+  try {
+    await fs.rm('./dist/images', { recursive: true, force: true });
+    return Promise.resolve();
+  } catch (e) {
+    return Promise.reject(e);
+  }
+};
+
 const start = async () => {
   try {
     await imagesLinkFix();
     await copyOgImage();
+    await deleteImageFolder();
   } catch (e) {
     console.log(e);
   }
