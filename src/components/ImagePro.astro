@@ -3,18 +3,19 @@ import { Picture } from '@astrojs/image/components';
 
 export interface Props {
   src: any;
+  widths?: number[];
+  sizes?: string;
 }
 
-const { src = '' } = Astro.props as Props;
+const {
+  src = '',
+  widths = [200, 400, 800, 930],
+  sizes = '(min-width: 1100px) 930px, 100w',
+} = Astro.props as Props;
 ---
 
 <div class="ImagePro">
-  <Picture
-    src={src}
-    widths={[200, 400, 800, 1050]}
-    sizes="(max-width: 800px) 100vw, 1050px"
-    alt="image"
-  />
+  <Picture src={src} widths={widths} sizes={sizes} alt="image" />
 </div>
 
 <style lang="scss">
