@@ -6,7 +6,7 @@ import image from '@astrojs/image';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://siddheshmangela.github.io',
-  base: '/foto',
+  base: '/',
   vite: {
     // Example: Add custom vite plugins directly to your Astro project
     plugins: [tsconfigPaths()],
