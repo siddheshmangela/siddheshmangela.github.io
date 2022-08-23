@@ -28,12 +28,24 @@ const { title } = Astro.props as Props;
     <meta name="twitter:description" content="a Photography portfolio" />
     <meta name="twitter:image" content="https://siddheshmangela.github.io/og.jpg" />
     <meta name="theme-color" content="#222224" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap"
+      />
+    </noscript>
     <style>
       :root {
         color-scheme: dark;
