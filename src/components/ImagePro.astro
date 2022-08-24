@@ -9,8 +9,8 @@ export interface Props {
 
 const {
   src = '',
-  widths = [200, 400, 800, 930],
-  sizes = '(min-width: 1100px) 930px, 100w',
+  widths = [400, 640, 800, 930],
+  sizes = '(min-width: 1100px) 930w, calc(100w - 16px)',
 } = Astro.props as Props;
 ---
 
