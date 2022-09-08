@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
-
 import image from '@astrojs/image';
+
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://siddheshmangela.github.io',
-  base: '/',
   vite: {
     // Example: Add custom vite plugins directly to your Astro project
     plugins: [tsconfigPaths()],
@@ -14,5 +14,5 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  integrations: [image()],
+  integrations: [image(), sitemap()],
 });
