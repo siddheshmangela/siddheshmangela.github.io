@@ -1,8 +1,9 @@
 ---
 import { Sprite } from 'astro-icon';
+import HomeNavigation from '~/components/HomeNavigation.astro';
 import IconAnchor from '~/components/IconAnchor.astro';
 import ImagePro from '~/components/ImagePro.astro';
-import Layout from '~/layouts/Layout.astro';
+import HomeLayout from '~/layouts/HomeLayout.astro';
 
 const imagesModules = import.meta.glob('../images/*.jpg');
 
@@ -31,7 +32,7 @@ const socialLinks = [
 ];
 ---
 
-<Layout title="Photos by Siddhesh Mangela">
+<HomeLayout>
   <Sprite.Provider>
     <main>
       <div class="bgCover">
@@ -53,6 +54,8 @@ const socialLinks = [
         </div>
       </div>
 
+      <HomeNavigation />
+
       <div class="imagesSet">
         {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
       </div>
@@ -65,7 +68,7 @@ const socialLinks = [
       </div>
     </main>
   </Sprite.Provider>
-</Layout>
+</HomeLayout>
 
 <style lang="scss">
   main {

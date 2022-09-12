@@ -1,0 +1,19 @@
+---
+import { navigation } from '~/data/navigation';
+---
+
+<nav>
+  <ul>
+    {
+      navigation.map((data) => (
+        <li>
+          <a href={data.href ? data.href : `/${data.name}`}>{data.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style lang="scss">
+
+</style>

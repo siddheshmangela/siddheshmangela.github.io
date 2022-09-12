@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+---
+
+<BaseLayout>
+  <slot />
+</BaseLayout>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+    --color-text: #afafaf;
+    --color-bg: #222224;
+    --color-text-hero: #ffc69f;
+  }
+
+  body {
+    margin: 0;
+    padding: 16px;
+    font-family: 'Merriweather', serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+  }
+</style>
