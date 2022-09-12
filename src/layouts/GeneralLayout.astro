@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import TheNavigation from '~/components/TheNavigation.astro';
 
 export interface Props {
   title?: string;
@@ -25,7 +26,10 @@ let {
   ogDescription={ogDescription}
   ogImage={ogImage}
 >
-  <slot />
+  <TheNavigation />
+  <main>
+    <slot />
+  </main>
 </BaseLayout>
 
 <style is:global>
@@ -39,9 +43,14 @@ let {
   body {
     margin: 0;
     padding: 16px;
+    padding-top: 0;
     font-family: 'Merriweather', serif;
     background-color: var(--color-bg);
     color: var(--color-text);
     min-height: 100vh;
   }
+</style>
+
+<style lang="scss">
+
 </style>

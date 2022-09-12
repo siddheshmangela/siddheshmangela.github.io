@@ -1,5 +1,7 @@
 ---
 import { navigation } from '~/data/navigation';
+
+console.log(Astro.url.pathname);
 ---
 
 <nav>
@@ -7,7 +9,16 @@ import { navigation } from '~/data/navigation';
     {
       navigation.map((data) => (
         <li>
-          <a href={data.href ? data.href : `/${data.name}`}>{data.label}</a>
+          <a
+            href={data.href ? data.href : `/${data.name}`}
+            class={`${
+              Astro.url.pathname === data.href || Astro.url.pathname === `/${data.name}`
+                ? 'active'
+                : ''
+            }`}
+          >
+            {data.label}
+          </a>
         </li>
       ))
     }
@@ -15,5 +26,48 @@ import { navigation } from '~/data/navigation';
 </nav>
 
 <style lang="scss">
+  nav {
+    display: block;
+    width: 100%;
+    position: sticky;
+    background-color: inherit;
+    top: 0;
+  }
 
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @media (min-width: 640px) {
+      justify-content: center;
+    }
+  }
+
+  li {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  a {
+    padding: 20px 0;
+    font-size: 1.1rem;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    display: inline-flex;
+    margin-right: 30px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: #fff;
+    }
+  }
 </style>
