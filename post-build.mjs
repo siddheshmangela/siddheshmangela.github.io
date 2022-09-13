@@ -1,19 +1,5 @@
 import { promises as fs } from 'fs';
 
-const imagesLinkFix = async () => {
-  const indexHtmlFile = './dist/index.html';
-
-  try {
-    const data = await fs.readFile(indexHtmlFile, 'utf8');
-    const manupulatedData = data.replaceAll(`/_image/images/`, `_image/images/`);
-
-    await fs.writeFile(indexHtmlFile, manupulatedData, 'utf8');
-    return Promise.resolve();
-  } catch (e) {
-    return Promise.reject(e);
-  }
-};
-
 const copyOgImage = async () => {
   try {
     const allFiles = await fs.readdir('./dist/_image/images');
@@ -40,7 +26,6 @@ const deleteImageFolder = async () => {
 
 const start = async () => {
   try {
-    await imagesLinkFix();
     await copyOgImage();
     await deleteImageFolder();
   } catch (e) {
