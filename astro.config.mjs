@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import image from '@astrojs/image';
-
 import sitemap from '@astrojs/sitemap';
+import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +14,5 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  integrations: [image(), sitemap()],
+  integrations: [image(), sitemap(), svelte()],
 });

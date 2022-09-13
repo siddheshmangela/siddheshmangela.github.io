@@ -12,12 +12,14 @@
   "devDependencies": {
     "@astrojs/image": "^0.3.4",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/svelte": "^1.0.0",
     "@types/node": "^18.7.6",
     "astro": "^1.0.6",
     "astro-icon": "^0.7.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.0",
     "sass": "^1.54.4",
+    "svelte": "^3.50.1",
     "typescript": "^4.7.4",
     "vite-tsconfig-paths": "^3.5.0"
   }

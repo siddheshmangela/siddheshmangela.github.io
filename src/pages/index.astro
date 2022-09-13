@@ -1,6 +1,6 @@
 ---
 import { Sprite } from 'astro-icon';
-import HomeNavigation from '~/components/HomeNavigation.astro';
+// import HomeNavigation from '~/components/HomeNavigation.astro';
 import IconAnchor from '~/components/IconAnchor.astro';
 import ImagePro from '~/components/ImagePro.astro';
 import HomeLayout from '~/layouts/HomeLayout.astro';
@@ -53,8 +53,8 @@ const socialLinks = [
           }
         </div>
       </div>
-
-      <HomeNavigation />
+<!--
+      <HomeNavigation /> -->
 
       <div class="imagesSet">
         {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
