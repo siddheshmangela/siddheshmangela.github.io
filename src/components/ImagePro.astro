@@ -5,17 +5,19 @@ export interface Props {
   src: any;
   widths?: number[];
   sizes?: string;
+  alt?: string;
 }
 
 const {
   src = '',
   widths = [400, 640, 800, 930],
   sizes = '(min-width: 1100px) 930w, calc(100w - 16px)',
+  alt = 'image',
 } = Astro.props as Props;
 ---
 
 <div class="ImagePro">
-  <Picture src={src} widths={widths} sizes={sizes} alt="image" />
+  <Picture src={src} widths={widths} sizes={sizes} alt={alt} />
 </div>
 
 <style lang="scss">

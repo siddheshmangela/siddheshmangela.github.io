@@ -1,0 +1,72 @@
+---
+import ImageWithDescription from '~/components/ImageWithDescription.astro';
+import GeneralLayout from '~/layouts/GeneralLayout.astro';
+---
+
+<GeneralLayout title="About: Photos by Siddhesh Mangela">
+  <div class="about">
+    <ImageWithDescription
+      src={import('~/images/general/about-profile.jpg')}
+      widths={[450, 600]}
+      sizes="(max-width: 1100px) 100vw, 450px"
+    >
+      Hi, Thanks for visiting my website cum photography portfolio.
+      <br />
+      <br />
+      I am a hobbyist photographer and a traveler with experiance in web-development.
+    </ImageWithDescription>
+    <ImageWithDescription
+      src={import('~/images/general/about-follow.jpg')}
+      widths={[450, 600]}
+      sizes="(max-width: 1100px) 100vw, 450px"
+      hideImageOnMobile
+      side="right"
+    >
+      Consider following me on
+      <a
+        href="https://www.instagram.com/sidthecool007"
+        title="instagram"
+        target="_blank"
+        rel="noopener"
+      >
+        Instrgram
+      </a> and don't forget to checkout my photos on <a
+        href="https://unsplash.com/@siddacool"
+        title="unsplash"
+        target="_blank"
+        rel="noopener"
+      >
+        Unsplash
+      </a>.
+
+      <br />
+      <br />
+
+      You can also drop a mail
+      <a
+        href="mailto:sidmangelainc@gmail.com?subject=Foto:"
+        title="mail"
+        target="_blank"
+        rel="noopener"
+      >
+        here
+      </a>.
+    </ImageWithDescription>
+  </div>
+</GeneralLayout>
+
+<style lang="scss">
+  .about {
+    padding-bottom: 100px;
+
+    @media (min-width: 1100px) {
+      padding-top: 100px;
+    }
+
+    a {
+      text-underline-offset: 10px;
+      text-decoration-thickness: 2px;
+      color: var(--color-link-1);
+    }
+  }
+</style>

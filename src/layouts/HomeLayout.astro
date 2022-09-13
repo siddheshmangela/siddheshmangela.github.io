@@ -1,9 +1,12 @@
 ---
+import { Sprite } from 'astro-icon';
 import BaseLayout from './BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <slot />
+  <Sprite.Provider>
+    <slot />
+  </Sprite.Provider>
 </BaseLayout>
 
 <style is:global>

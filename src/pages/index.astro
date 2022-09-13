@@ -1,6 +1,5 @@
 ---
-import { Sprite } from 'astro-icon';
-// import HomeNavigation from '~/components/HomeNavigation.astro';
+import HomeNavigation from '~/components/HomeNavigation.astro';
 import IconAnchor from '~/components/IconAnchor.astro';
 import ImagePro from '~/components/ImagePro.astro';
 import HomeLayout from '~/layouts/HomeLayout.astro';
@@ -33,41 +32,39 @@ const socialLinks = [
 ---
 
 <HomeLayout>
-  <Sprite.Provider>
-    <main>
-      <div class="bgCover">
-        <ImagePro
-          src={import('~/images/0.jpg')}
-          widths={[400, 640, 800, 930, 1050]}
-          sizes="(min-width: 1100px) 1050w, calc(100w - 16px)"
-        />
-      </div>
-      <div class="hero">
-        <div class="description">Photos by</div>
-        <div class="name">Siddhesh Mangela</div>
-        <div class="social-links">
-          {
-            socialLinks.map(({ name, title, href }) => (
-              <IconAnchor name={name} title={title} href={href} />
-            ))
-          }
-        </div>
-      </div>
-<!--
-      <HomeNavigation /> -->
-
-      <div class="imagesSet">
-        {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
-      </div>
-      <div class="social-links-extended">
+  <main>
+    <div class="bgCover">
+      <ImagePro
+        src={import('~/images/0.jpg')}
+        widths={[400, 640, 800, 930, 1050]}
+        sizes="(min-width: 1100px) 1050w, calc(100w - 16px)"
+      />
+    </div>
+    <div class="hero">
+      <div class="description">Photos by</div>
+      <div class="name">Siddhesh Mangela</div>
+      <div class="social-links">
         {
           socialLinks.map(({ name, title, href }) => (
-            <IconAnchor name={name} title={title} href={href} showTitle />
+            <IconAnchor name={name} title={title} href={href} />
           ))
         }
       </div>
-    </main>
-  </Sprite.Provider>
+    </div>
+
+    <HomeNavigation />
+
+    <div class="imagesSet">
+      {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
+    </div>
+    <div class="social-links-extended">
+      {
+        socialLinks.map(({ name, title, href }) => (
+          <IconAnchor name={name} title={title} href={href} showTitle />
+        ))
+      }
+    </div>
+  </main>
 </HomeLayout>
 
 <style lang="scss">

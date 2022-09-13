@@ -1,9 +1,0 @@
----
-import GeneralLayout from '~/layouts/GeneralLayout.astro';
----
-
-<GeneralLayout>About</GeneralLayout>
-
-<style lang="scss">
-
-</style>

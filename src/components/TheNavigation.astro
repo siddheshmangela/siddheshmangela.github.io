@@ -1,21 +1,17 @@
 ---
 import { navigation } from '~/data/navigation';
-
-console.log(Astro.url.pathname);
+import NavLogo from './NavLogo.astro';
 ---
 
 <nav>
   <ul>
+    <NavLogo />
     {
       navigation.map((data) => (
         <li>
           <a
-            href={data.href ? data.href : `/${data.name}`}
-            class={`${
-              Astro.url.pathname === data.href || Astro.url.pathname === `/${data.name}`
-                ? 'active'
-                : ''
-            }`}
+            href={`/${data.name}`}
+            class={`${Astro.url.pathname === `/${data.name}` ? 'active' : ''}`}
           >
             {data.label}
           </a>
@@ -27,11 +23,28 @@ console.log(Astro.url.pathname);
 
 <style lang="scss">
   nav {
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
     display: block;
     width: 100%;
     position: sticky;
     background-color: inherit;
     top: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 60px;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border-1);
+
+    @media (min-width: 640px) {
+      height: 72px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @media print {
+      display: none;
+    }
   }
 
   ul {
@@ -39,11 +52,7 @@ console.log(Astro.url.pathname);
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
-    justify-content: flex-start;
-
-    @media (min-width: 640px) {
-      justify-content: center;
-    }
+    height: 100%;
   }
 
   li {
@@ -51,23 +60,22 @@ console.log(Astro.url.pathname);
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+    margin-right: 20px;
   }
 
   a {
-    padding: 20px 0;
-    font-size: 1.1rem;
+    font-size: inherit;
     color: inherit;
     text-decoration: none;
-    letter-spacing: 1.2px;
+    letter-spacing: inherit;
     display: inline-flex;
-    margin-right: 30px;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    height: 70%;
+    align-items: center;
 
     &.active {
-      color: #fff;
+      font-weight: 700;
     }
   }
 </style>
