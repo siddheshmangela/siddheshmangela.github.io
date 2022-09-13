@@ -1,8 +1,8 @@
 ---
-import { Sprite } from 'astro-icon';
+import HomeNavigation from '~/components/HomeNavigation.astro';
 import IconAnchor from '~/components/IconAnchor.astro';
 import ImagePro from '~/components/ImagePro.astro';
-import Layout from '~/layouts/Layout.astro';
+import HomeLayout from '~/layouts/HomeLayout.astro';
 
 const imagesModules = import.meta.glob('../images/*.jpg');
 
@@ -31,41 +31,41 @@ const socialLinks = [
 ];
 ---
 
-<Layout title="Photos by Siddhesh Mangela">
-  <Sprite.Provider>
-    <main>
-      <div class="bgCover">
-        <ImagePro
-          src={import('~/images/0.jpg')}
-          widths={[400, 640, 800, 930, 1050]}
-          sizes="(min-width: 1100px) 1050w, calc(100w - 16px)"
-        />
-      </div>
-      <div class="hero">
-        <div class="description">Photos by</div>
-        <div class="name">Siddhesh Mangela</div>
-        <div class="social-links">
-          {
-            socialLinks.map(({ name, title, href }) => (
-              <IconAnchor name={name} title={title} href={href} />
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="imagesSet">
-        {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
-      </div>
-      <div class="social-links-extended">
+<HomeLayout>
+  <main>
+    <div class="bgCover">
+      <ImagePro
+        src={import('~/images/0.jpg')}
+        widths={[400, 640, 800, 930, 1050]}
+        sizes="(min-width: 1100px) 1050w, calc(100w - 16px)"
+      />
+    </div>
+    <div class="hero">
+      <div class="description">Photos by</div>
+      <div class="name">Siddhesh Mangela</div>
+      <div class="social-links">
         {
           socialLinks.map(({ name, title, href }) => (
-            <IconAnchor name={name} title={title} href={href} showTitle />
+            <IconAnchor name={name} title={title} href={href} />
           ))
         }
       </div>
-    </main>
-  </Sprite.Provider>
-</Layout>
+    </div>
+
+    <HomeNavigation />
+
+    <div class="imagesSet">
+      {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
+    </div>
+    <div class="social-links-extended">
+      {
+        socialLinks.map(({ name, title, href }) => (
+          <IconAnchor name={name} title={title} href={href} showTitle />
+        ))
+      }
+    </div>
+  </main>
+</HomeLayout>
 
 <style lang="scss">
   main {

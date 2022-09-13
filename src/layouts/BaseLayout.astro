@@ -1,0 +1,57 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  fonts?: string;
+}
+
+let {
+  title = 'Photos by Siddhesh Mangela',
+  description = 'a Photography portfolio',
+  ogTitle = '',
+  ogDescription = '',
+  ogImage = 'https://siddheshmangela.github.io/og.jpg',
+  fonts = 'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap',
+} = Astro.props as Props;
+
+ogTitle = ogTitle ? ogTitle : title;
+ogDescription = ogDescription ? ogDescription : description;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon-32x32.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://siddheshmangela.github.io/" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:description" content={description} />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="https://siddheshmangela.github.io/" />
+    <meta property="twitter:url" content="https://siddheshmangela.github.io/" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={fonts} rel="stylesheet" />
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

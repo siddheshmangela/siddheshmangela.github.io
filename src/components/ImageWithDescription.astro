@@ -1,0 +1,105 @@
+---
+import ImagePro from '~/components/ImagePro.astro';
+
+export interface Props {
+  src: any;
+  widths?: number[];
+  sizes?: string;
+  alt?: string;
+  side?: 'left' | 'right';
+  hideImageOnMobile?: boolean;
+}
+
+const { src, widths, sizes, alt, side = 'left', hideImageOnMobile = false } = Astro.props as Props;
+---
+
+<article>
+  <section class={`profile-pic side--${side} ${hideImageOnMobile ? 'hideImageOnMobile' : ''}`}>
+    <ImagePro src={src} widths={widths} sizes={sizes} alt={alt} />
+  </section>
+
+  <section class={`description side--${side}`}>
+    <h2>
+      <slot />
+    </h2>
+  </section>
+</article>
+
+<style lang="scss">
+  article {
+    padding-bottom: 20px;
+    @media (min-width: 1100px) {
+      display: flex;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+  }
+
+  .profile-pic {
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    background-color: black;
+    margin: 0 auto;
+    clip-path: polygon(5% 6%, 98% 18%, 80% 99%, 6% 96%);
+
+    @media (min-width: 1100px) {
+      display: flex;
+      width: 450px;
+      height: 450px;
+      margin: 0;
+    }
+
+    &.hideImageOnMobile {
+      display: none;
+      @media (min-width: 1100px) {
+        display: flex;
+      }
+    }
+
+    &.side {
+      &--right {
+        order: 2;
+        clip-path: polygon(92% 9%, 0% 25%, 18% 100%, 99% 93%);
+      }
+    }
+
+    :global(img) {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .description {
+    flex: 1;
+    line-height: 2.7rem;
+    letter-spacing: 0.6px;
+    padding-top: 20px;
+
+    @media (min-width: 1100px) {
+      padding-left: 40px;
+      padding-top: 60px;
+    }
+
+    &.side {
+      &--right {
+        order: 1;
+
+        @media (min-width: 1100px) {
+          padding-right: 40px;
+          padding-left: 0;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 1.3rem;
+
+      @media (min-width: 640px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+</style>
