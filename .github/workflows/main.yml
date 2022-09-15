@@ -28,8 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: siddheshmangela.com
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        id: ${{ steps.deployment.outputs.page_url }}
+        id: deployment
         uses: actions/deploy-pages@v1
