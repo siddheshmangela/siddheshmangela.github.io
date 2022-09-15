@@ -13,7 +13,7 @@ let {
   description = 'a Photography portfolio',
   ogTitle = '',
   ogDescription = '',
-  ogImage = 'https://siddheshmangela.github.io/og.jpg',
+  ogImage = 'https://siddheshmangela.com/og.jpg',
   fonts = 'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap',
 } = Astro.props as Props;
 
@@ -32,13 +32,13 @@ ogDescription = ogDescription ? ogDescription : description;
     <meta name="description" content={description} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://siddheshmangela.github.io/" />
+    <meta property="og:url" content="https://siddheshmangela.com" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:description" content={description} />
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="https://siddheshmangela.github.io/" />
-    <meta property="twitter:url" content="https://siddheshmangela.github.io/" />
+    <meta property="twitter:domain" content="https://siddheshmangela.com" />
+    <meta property="twitter:url" content="https://siddheshmangela.com" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />

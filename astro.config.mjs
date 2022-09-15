@@ -6,7 +6,7 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://siddheshmangela.github.io',
+  site: 'https://siddheshmangela.com',
   vite: {
     // Example: Add custom vite plugins directly to your Astro project
     plugins: [tsconfigPaths()],
