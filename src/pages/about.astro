@@ -7,49 +7,51 @@ import GeneralLayout from '~/layouts/GeneralLayout.astro';
   <div class="about">
     <ImageWithDescription
       src={import('~/images/general/about-profile.jpg')}
-      widths={[450, 600]}
-      sizes="(max-width: 1100px) 100vw, 450px"
+      widths={[430, 600]}
+      sizes="(max-width: 1100px) 100vw, 430px"
+      imageDisplay="large"
     >
-      Hi, Thanks for visiting my website cum photography portfolio.
-      <br />
-      <br />
-      I am a hobbyist photographer and a traveler with experiance in web-development.
+      <h1>Hi, Thanks for visiting my website cum photography portfolio.</h1>
+
+      <h2>I am a photographer and traveler with experience in web development.</h2>
     </ImageWithDescription>
+
     <ImageWithDescription
       src={import('~/images/general/about-follow.jpg')}
-      widths={[450, 600]}
-      sizes="(max-width: 1100px) 100vw, 450px"
+      widths={[400, 600]}
+      sizes="(max-width: 1100px) 100vw, 400px"
       side="right"
     >
-      Consider following me on
-      <a
-        href="https://www.instagram.com/sidthecool007"
-        title="instagram"
-        target="_blank"
-        rel="noopener"
-      >
-        Instrgram
-      </a> and don't forget to checkout my photos on <a
-        href="https://unsplash.com/@siddacool"
-        title="unsplash"
-        target="_blank"
-        rel="noopener"
-      >
-        Unsplash
-      </a>.
+      <p>
+        Consider following me on
+        <a
+          href="https://www.instagram.com/sidthecool007"
+          title="instagram"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a> and don't forget to checkout my photos on <a
+          href="https://unsplash.com/@siddacool"
+          title="unsplash"
+          target="_blank"
+          rel="noopener"
+        >
+          Unsplash
+        </a> .
+        <br />
+        <br />
 
-      <br />
-      <br />
-
-      You can also drop a mail
-      <a
-        href="mailto:sidmangelainc@gmail.com?subject=Foto:"
-        title="mail"
-        target="_blank"
-        rel="noopener"
-      >
-        here
-      </a>.
+        You can also drop a mail
+        <a
+          href="mailto:sidmangelainc@gmail.com?subject=Foto:"
+          title="mail"
+          target="_blank"
+          rel="noopener"
+        >
+          here
+        </a>.
+      </p>
     </ImageWithDescription>
   </div>
 </GeneralLayout>
@@ -59,13 +61,20 @@ import GeneralLayout from '~/layouts/GeneralLayout.astro';
     padding-bottom: 100px;
 
     @media (min-width: 1100px) {
-      padding-top: 40px;
+      padding-top: 30px;
     }
 
     a {
       text-underline-offset: 10px;
       text-decoration-thickness: 2px;
       color: var(--color-link-1);
+    }
+
+    h2,
+    h1,
+    p {
+      font-weight: 700;
+      font-size: clamp(1.3rem, 1.61vmax, 1.65rem);
     }
   }
 </style>
