@@ -31,5 +31,5 @@ jobs:
       url: siddheshmangela.com
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: ${{ steps.deployment.outputs.page_url }}
         uses: actions/deploy-pages@v1
