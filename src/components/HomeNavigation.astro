@@ -7,7 +7,7 @@ import { navigation } from '~/data/navigation';
     {
       navigation.map((data) => (
         <li>
-          <a href={`/${data.name}`}>{data.label}</a>
+          <a href={`${data.href ? data.href : `/${data.name}`}`}>{data.label}</a>
         </li>
       ))
     }
@@ -35,7 +35,7 @@ import { navigation } from '~/data/navigation';
     margin-top: 20px;
     margin-bottom: 40px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 
     @media (min-width: 640px) {
       margin-top: 0;
@@ -47,6 +47,11 @@ import { navigation } from '~/data/navigation';
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   a {

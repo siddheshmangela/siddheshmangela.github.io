@@ -10,7 +10,7 @@ import NavLogo from './NavLogo.astro';
       navigation.map((data) => (
         <li>
           <a
-            href={`/${data.name}`}
+            href={`${data.href ? data.href : `/${data.name}`}`}
             class={`${Astro.url.pathname === `/${data.name}` ? 'active' : ''}`}
           >
             {data.label}
