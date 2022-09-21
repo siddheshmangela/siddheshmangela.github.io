@@ -6,6 +6,6 @@ export const navigation = [
   {
     name: 'blog',
     label: 'Blog',
-    href: 'http://blog.siddheshmangela.com/',
+    href: 'https://blog.siddheshmangela.com/',
   },
 ];
