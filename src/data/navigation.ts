@@ -4,6 +4,10 @@ export const navigation = [
     label: 'About',
   },
   {
+    name: 'books/viet-noir',
+    label: 'Viet Noir',
+  },
+  {
     name: 'blog',
     label: 'Blog',
     href: 'https://blog.siddheshmangela.com/',
