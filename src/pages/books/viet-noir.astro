@@ -9,7 +9,11 @@ const imagesList = Object.entries(imagesModules).map(([, entries]) => {
 });
 ---
 
-<BookLayout title="Viet Noir" description="A black and white photography project made in Vietnam.">
+<BookLayout
+  title="Viet Noir"
+  description="A black and white photography project made in Vietnam."
+  ogImage="https://siddheshmangela.com/og-images/viet-noir.jpg"
+>
   <h1>VIET NOIR</h1>
   <div class="imagesSet">
     {imagesList.map((imgImport) => <ImagePro src={imgImport()} />)}
