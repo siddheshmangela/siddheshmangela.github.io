@@ -14,5 +14,11 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  integrations: [image(), sitemap(), svelte()],
+  integrations: [
+    image(),
+    sitemap({
+      filter: (page) => page !== 'https://siddheshmangela.com/books/',
+    }),
+    svelte(),
+  ],
 });
